@@ -1,0 +1,20 @@
+install.packages("roxygen2")
+install.packages("devtools")
+
+library(devtools)
+library(roxygen2)
+
+# Set your working directory to the package root
+setwd("C:/Users/archi/Desktop/myPakcage/MYDISS")
+
+# Run document to generate the NAMESPACE and man files
+devtools::document()
+
+devtools::build()
+detach("package:MYDISS", unload = TRUE)
+
+install.packages("C:/Users/archi/Desktop/myPackage/MYDISS_0.1.0.tar.gz", repos = NULL, type = "source")
+
+library(MYDISS)
+
+run_full_analysis("D:/Downloads/p004", "D:/Downloads/out/conametest")
